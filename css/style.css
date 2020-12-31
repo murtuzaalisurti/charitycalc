@@ -6,14 +6,23 @@ body{
     background-color: #175375;
 }
 
-h1{
+span{
     color: #eef9ff;
-    font-family: 'Montserrat', sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 65px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin-top: 10px;
+}
+p{
+    color: #eef9ff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* margin-top: 10px; */
 }
 
 form > div:nth-child(1){
@@ -42,7 +51,7 @@ form > div:nth-child(2){
     margin-bottom: 10px;
 }
 #principalamount::placeholder, #interestamount::placeholder, #inflationrate::placeholder{
-    color: #eef9ff;
+    color: #dddddd;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
@@ -60,6 +69,13 @@ form > div:nth-child(2){
     box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
     cursor: pointer;
+}
+#actualincome:disabled{
+    background-color: #283e4b;
+    color: #bdbdbd;
+    box-shadow: none;
+    transition: all 0.2s;
+    cursor: default;
 }
 form > div:nth-child(3){
     display: flex;
