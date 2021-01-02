@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#actualincome").disabled = true;
-    document.getElementById("inflationrate").onkeyup = () => {
+    document.getElementById("interestamount").onkeyup = () => {
         document.querySelector("#actualincome").disabled = false;
         document.querySelector("form").onsubmit = () => {
             class Donate {
