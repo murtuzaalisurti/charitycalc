@@ -90,3 +90,109 @@ form > div:nth-child(3){
     padding: 12px;
     justify-self: center;
 }
+
+
+
+.main-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.from, #to{
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.from{
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 24px;
+}
+
+#to{
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 24px;
+}
+
+#drop-down-1, #drop-down-2{
+    outline: none;
+    border: 1px transparent;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    padding: 5px;
+    margin-top: 20px;
+    /* align-items: center; */
+    /* margin: 20px 20px; */
+    /* justify-content: space-around; */
+}
+#convertactualincome, #convertdonationamount{
+    margin-top: 20px;
+    background-color: #5285a3;
+    color: #eef9ff;
+    border: 1px transparent;
+    border-radius: 5px;
+    width: 180px;
+    outline: none;
+    padding: 10px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+}
+#convertactualincome::placeholder, #convertdonationamount::placeholder{
+    color: #dddddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.btn-container{
+    /* background-color: aliceblue; */
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    margin: 20px 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+#btn{
+    padding: 10px 15px;
+    background-color: #173753;
+    color: whitesmoke;
+    border: 1px transparent;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+#btn:hover{
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+#btn:disabled{
+    box-shadow: none;
+    cursor: default;
+    background-color: #354350;
+    color: rgb(156, 156, 156);
+    transition: all 0.3s;
+}
+#btn:enabled{
+    transition: all 0.3s;
+}
+#btn:focus{
+    outline: none;
+}
+.display-output{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    color: #cae6ff;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 40px;
+}
