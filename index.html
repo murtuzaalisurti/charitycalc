@@ -15,104 +15,127 @@
     <p><i>invest in charity</i></p>
     <form>
         <div class="show">
-            <input id="principalamount" type="number" step="0.001" class="show" placeholder="Enter principal amount.." autocomplete="off">
-            <input id="interestamount" type="number" step="0.001" class="show" placeholder="Enter interest amount.." autocomplete="off">
-            <input id="inflationrate" type="number" step="0.001" class="show" placeholder="Enter inflation rate in %.." autocomplete="off">
+            <input id="principalamount" type="number" step="0.001" class="show" placeholder="Enter principal amount.."
+                autocomplete="off">
+            <input id="interestamount" type="number" step="0.001" class="show" placeholder="Enter interest amount.."
+                autocomplete="off">
+            <input id="inflationrate" type="number" step="0.001" class="show" placeholder="Enter inflation rate in %.."
+                autocomplete="off">
         </div>
         <div>
             <input type="submit" value="Calculate Actual Income" id="actualincome">
         </div>
-        <div id="output"></div>
+        <div class="output-1-container">
+            <div id="output"></div>
+        </div>
     </form>
     <div class="main-container">
-        <p class="from">Convert</p>
-        <!-- <p id="from">From</p> -->
-        <input type="number" step="0.001" placeholder="Enter Actual Income.." id="convertactualincome">
-        <p class="from">and</p>
-        <input type="number" step="0.001" placeholder="Enter Donation Amount.." id="convertdonationamount">
-        <p class="from">From</p>
-        <select id="drop-down-1">
-            <option disabled="disabled" selected>Select an Option...</option>
-            <option value="AUD">AUD</option>
-            <option value="BGN">BGN</option>
-            <option value="BRL">BRL</option>
-            <option value="CAD">CAD</option>
-            <option value="CHF">CHF</option>
-            <option value="CNY">CNY</option>
-            <option value="CZK">CZK</option>
-            <option value="DKK">DKK</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="HKD">HKD</option>
-            <option value="HRK">HRK</option>
-            <option value="HUF">HUF</option>
-            <option value="IDR">IDR</option>
-            <option value="ILS">ILS</option>
-            <option value="INR">INR</option>
-            <option value="ISK">ISK</option>
-            <option value="JPY">JPY</option>
-            <option value="KRW">KRW</option>
-            <option value="MXN">MXN</option>
-            <option value="MYR">MYR</option>
-            <option value="NOK">NOK</option>
-            <option value="NZD">NZD</option>
-            <option value="PHP">PHP</option>
-            <option value="PLN">PLN</option>
-            <option value="RON">RON</option>
-            <option value="RUB">RUB</option>
-            <option value="SEK">SEK</option>
-            <option value="SGD">SGD</option>
-            <option value="THB">THB</option>
-            <option value="TRY">TRY</option>
-            <option value="USD">USD</option>
-            <option value="ZAR">ZAR</option>
-        </select>
-        <p id="to">To</p>
-        <!-- <input type="number" step="0.001" placeholder="Enter Donation Amount.." id="convertdonationamount"> -->
-        <select id="drop-down-2">
-            <option disabled="disabled" selected>Select an Option...</option>
-            <option value="AUD">AUD</option>
-            <option value="BGN">BGN</option>
-            <option value="BRL">BRL</option>
-            <option value="CAD">CAD</option>
-            <option value="CHF">CHF</option>
-            <option value="CNY">CNY</option>
-            <option value="CZK">CZK</option>
-            <option value="DKK">DKK</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="HKD">HKD</option>
-            <option value="HRK">HRK</option>
-            <option value="HUF">HUF</option>
-            <option value="IDR">IDR</option>
-            <option value="ILS">ILS</option>
-            <option value="INR">INR</option>
-            <option value="ISK">ISK</option>
-            <option value="JPY">JPY</option>
-            <option value="KRW">KRW</option>
-            <option value="MXN">MXN</option>
-            <option value="MYR">MYR</option>
-            <option value="NOK">NOK</option>
-            <option value="NZD">NZD</option>
-            <option value="PHP">PHP</option>
-            <option value="PLN">PLN</option>
-            <option value="RON">RON</option>
-            <option value="RUB">RUB</option>
-            <option value="SEK">SEK</option>
-            <option value="SGD">SGD</option>
-            <option value="THB">THB</option>
-            <option value="TRY">TRY</option>
-            <option value="USD">USD</option>
-            <option value="ZAR">ZAR</option>
-        </select>
+        <div class="class-flex-column">
+            <p class="from">Convert</p>
+        </div>
+        <div class="class-flex-column">
+            <input type="number" step="0.001" placeholder="Enter Actual Income.." id="convertactualincome">
+        </div>
+        <div class="class-flex-column">
+            <p class="from">And</p>
+        </div>
+        <div class="class-flex-column">
+            <input type="number" step="0.001" placeholder="Enter Donation Amount.." id="convertdonationamount">
+        </div>
+        <div class="class-flex-column">
+            <p class="from" id="from-line">From</p>
+        </div>
+        <div class="class-flex-column">
+            <select id="drop-down-1">
+                <option disabled="disabled" selected>Select a Currency Option from list</option>
+                <option value="AUD">AUD</option>
+                <option value="BGN">BGN</option>
+                <option value="BRL">BRL</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="HKD">HKD</option>
+                <option value="HRK">HRK</option>
+                <option value="HUF">HUF</option>
+                <option value="IDR">IDR</option>
+                <option value="ILS">ILS</option>
+                <option value="INR">INR</option>
+                <option value="ISK">ISK</option>
+                <option value="JPY">JPY</option>
+                <option value="KRW">KRW</option>
+                <option value="MXN">MXN</option>
+                <option value="MYR">MYR</option>
+                <option value="NOK">NOK</option>
+                <option value="NZD">NZD</option>
+                <option value="PHP">PHP</option>
+                <option value="PLN">PLN</option>
+                <option value="RON">RON</option>
+                <option value="RUB">RUB</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="THB">THB</option>
+                <option value="TRY">TRY</option>
+                <option value="USD">USD</option>
+                <option value="ZAR">ZAR</option>
+            </select>
+        </div>
+        <div class="class-flex-column">
+            <p id="to">To</p>
+        </div>
+        <div class="class-flex-column">
+            <select id="drop-down-2">
+                <option disabled="disabled" selected>Select a Currency Option from list</option>
+                <option value="AUD">AUD</option>
+                <option value="BGN">BGN</option>
+                <option value="BRL">BRL</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="HKD">HKD</option>
+                <option value="HRK">HRK</option>
+                <option value="HUF">HUF</option>
+                <option value="IDR">IDR</option>
+                <option value="ILS">ILS</option>
+                <option value="INR">INR</option>
+                <option value="ISK">ISK</option>
+                <option value="JPY">JPY</option>
+                <option value="KRW">KRW</option>
+                <option value="MXN">MXN</option>
+                <option value="MYR">MYR</option>
+                <option value="NOK">NOK</option>
+                <option value="NZD">NZD</option>
+                <option value="PHP">PHP</option>
+                <option value="PLN">PLN</option>
+                <option value="RON">RON</option>
+                <option value="RUB">RUB</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="THB">THB</option>
+                <option value="TRY">TRY</option>
+                <option value="USD">USD</option>
+                <option value="ZAR">ZAR</option>
+            </select>
+        </div>
     </div>
     <div class="btn-container">
         <form id="form-2">
             <input type="submit" value="Convert" id="btn">
         </form>
     </div>
-    <div id="result" class="display-output"></div>
-    <div id="result-2" class="display-output display-output-2"></div>
+    <div class="result-container">
+        <div class="amount-label">Actual Income</div>
+        <div id="result" class="display-output"></div>
+        <div class="amount-label">Donation Amount</div>
+        <div id="result-2" class="display-output"></div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 
