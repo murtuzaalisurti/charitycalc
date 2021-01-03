@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#actualincome").disabled = true;
-    document.getElementById("interestamount").onkeyup = () => {
-        document.querySelector("#actualincome").disabled = false;
+    console.log(document.querySelectorAll("div.show input"));
+    var selectfield = document.querySelectorAll("div.show input");
+    for(let i = 0; i < selectfield.length; i++){
+        selectfield[i].onkeyup = () => {
+            document.querySelector("#actualincome").disabled = false;
+        }
+    }
+    // document.querySelector("#interestamount").onkeyup = () => {
+        // document.querySelector("#actualincome").disabled = false;
         document.querySelector("form").onsubmit = () => {
             class Donate {
                 constructor(principal, interest, inflation) {
@@ -11,30 +18,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 calcincome() {
                     console.log(typeof this.interest);
-                    if (this.interest > 0) {
+                    if (this.interest > 0 && this.principal > 0) {
                         console.log(typeof this.interest);
                         var result = document.querySelector("#output");
                         var pminusint = this.principal - (this.interest);
-                        console.log(typeof pminusint);
+                        // console.log(typeof pminusint);
                         var rate = (this.interest * 100) / this.principal;
+                        console.log(typeof rate);
                         if (rate >= this.inflation) {
                             var actualinc = (pminusint + ((this.inflation * pminusint) / 100));
                             var actualincround = actualinc.toFixed(2);
                             var charity = (this.principal - actualinc);
                             var charityround = charity.toFixed(2);
-                            console.log(actualincround);
+                            // console.log(actualincround);
                             result.innerHTML = `Your actual income is&nbsp<b>${actualincround}</b>&nbspand you have to donate&nbsp<b>${charityround}</b>`;
                         } else {
                             var actualinc = pminusint;
                             var actualincround = actualinc.toFixed(2);
                             var charity = this.principal - actualinc;
                             var charityround = charity.toFixed(2);
-                            console.log(actualincround);
+                            // console.log(actualincround);
                             result.innerHTML = `Your actual income is&nbsp<b>${actualincround}</b>&nbspand you have to donate&nbsp<b>${charityround}</b>`;
                         }
-                    } else if (this.interest == 0) {
+                    } else if (this.interest == 0 && this.principal > 0) {
                         var result = document.querySelector("#output");
-                        result.innerHTML = `Your actual income is&nbsp<b>${this.principal}</b>`;
+                        result.innerHTML = `Your actual income is&nbsp<b>${this.principal}</b>&nbspand you have to donate&nbsp<b>${this.interest}</b>`;
+                    } else if (this.interest == 0 && this.principal == 0) {
+                        var result = document.querySelector("#output");
+                        result.innerHTML = `Your actual income is&nbsp<b>${this.principal}</b>&nbspand you have to donate&nbsp<b>${this.interest}</b>`;
                     }
                     else {
                         var result = document.querySelector("#output");
@@ -49,5 +60,5 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("#actualincome").disabled = true;
             return false;
         }
-    }
+    // }
 });
