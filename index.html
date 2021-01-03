@@ -14,10 +14,10 @@
     </span>
     <p><i>invest in charity</i></p>
     <form>
-        <div>
-            <input id="principalamount" placeholder="Enter principal amount.." autocomplete="off">
-            <input id="interestamount" placeholder="Enter interest amount.." autocomplete="off">
-            <input id="inflationrate" placeholder="Enter inflation rate in %.." autocomplete="off">
+        <div class="show">
+            <input id="principalamount" type="number" step="0.001" class="show" placeholder="Enter principal amount.." autocomplete="off">
+            <input id="interestamount" type="number" step="0.001" class="show" placeholder="Enter interest amount.." autocomplete="off">
+            <input id="inflationrate" type="number" step="0.001" class="show" placeholder="Enter inflation rate in %.." autocomplete="off">
         </div>
         <div>
             <input type="submit" value="Calculate Actual Income" id="actualincome">
