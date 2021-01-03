@@ -37,6 +37,15 @@ form > div:nth-child(2){
     justify-content: center;
     margin-top: 50px;
 }
+.output-1-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: #0e3044;
+    border: 1px transparent;
+    border-radius: 5px;
+    margin: 0px 20px;
+}
 #principalamount, #interestamount, #inflationrate{
     background-color: #5285a3;
     color: #eef9ff;
@@ -87,20 +96,37 @@ form > div:nth-child(3){
     color: #eef9ff;
     font-family: 'Montserrat', sans-serif;
     font-size: 23px;
-    padding: 12px;
-    justify-self: center;
+    padding: 0px 15px;
+    text-align: center;
+    align-self: center;
+    /* justify-self: center; */
 }
 
 
 
 .main-container{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
     margin-top: 50px;
 }
+/* .converter-input{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+} */
+.class-flex-column{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+.convert-from-to{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
 .from, #to{
-    display: inline-block;
+    /* display: inline-block; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -108,13 +134,15 @@ form > div:nth-child(3){
 
 .from{
     margin-right: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 24px;
 }
-
+#from-line{
+    margin-top: 50px;
+}
 #to{
     margin-right: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 24px;
 }
 
@@ -125,18 +153,18 @@ form > div:nth-child(3){
     font-family: 'Montserrat', sans-serif;
     justify-self: center;
     padding: 5px;
-    margin-top: 20px;
+    margin-top: 8px;
     /* align-items: center; */
     /* margin: 20px 20px; */
     /* justify-content: space-around; */
 }
 #convertactualincome, #convertdonationamount{
-    margin-top: 20px;
+    margin-top: 8px;
     background-color: #5285a3;
     color: #eef9ff;
     border: 1px transparent;
     border-radius: 5px;
-    width: 180px;
+    width: 200px;
     outline: none;
     padding: 10px 10px;
     font-family: 'Montserrat', sans-serif;
@@ -155,7 +183,7 @@ form > div:nth-child(3){
     color: black;
     font-family: 'Montserrat', sans-serif;
     justify-self: center;
-    margin: 20px 20px;
+    margin: 30px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -186,16 +214,36 @@ form > div:nth-child(3){
 #btn:focus{
     outline: none;
 }
+.result-container{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+.amount-label{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
 .display-output{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
+    background-color: #0e3044;
+    padding: 0px 15px;
+    border: 1px transparent;
+    border-radius: 5px;
     color: #cae6ff;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    margin-top: 40px;
+    /* margin-top: 20px; */
+    margin-bottom: 5px;
 }
-.display-output-2{
-    margin-bottom: 30px;
+#result-2{
+    margin-top: 0px;
+    margin-bottom: 50px;
 }
