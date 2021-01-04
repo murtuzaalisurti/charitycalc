@@ -64,6 +64,10 @@ form > div:nth-child(2){
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
+#principalamount:hover, #interestamount:hover, #inflationrate:hover{
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
 #actualincome{
     width: 200px;
     padding: 20px 20px;
@@ -158,6 +162,11 @@ form > div:nth-child(3){
     /* margin: 20px 20px; */
     /* justify-content: space-around; */
 }
+#drop-down-1:hover, #drop-down-2:hover{
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
 #convertactualincome, #convertdonationamount{
     margin-top: 8px;
     background-color: #5285a3;
@@ -176,6 +185,10 @@ form > div:nth-child(3){
     color: #dddddd;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+}
+#convertactualincome:hover, #convertdonationamount:hover{
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
 }
 
 .btn-container{
