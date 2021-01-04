@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.log(typeof this.interest);
                         var result = document.querySelector("#output");
                         var pminusint = this.principal - (this.interest);
-                        // console.log(typeof pminusint);
                         var rate = (this.interest * 100) / this.principal;
                         console.log(typeof rate);
                         if (rate >= this.inflation) {
@@ -30,14 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             var actualincround = actualinc.toFixed(2);
                             var charity = (this.principal - actualinc);
                             var charityround = charity.toFixed(2);
-                            // console.log(actualincround);
                             result.innerHTML = `Your actual income is&nbsp<b>${actualincround}</b>&nbspand you have to donate&nbsp<b>${charityround}</b>`;
                         } else {
                             var actualinc = pminusint;
                             var actualincround = actualinc.toFixed(2);
                             var charity = this.principal - actualinc;
                             var charityround = charity.toFixed(2);
-                            // console.log(actualincround);
                             result.innerHTML = `Your actual income is&nbsp<b>${actualincround}</b>&nbspand you have to donate&nbsp<b>${charityround}</b>`;
                         }
                     } else if (this.interest == 0 && this.principal > 0) {
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         var result = document.querySelector("#output");
                         result.innerHTML = "Something's wrong. Please enter a valid number and try again.";
                     }
-                    // return actualincround, charityround;
                 }
             }
             var principalamount = (document.querySelector("#principalamount").value);
@@ -62,9 +58,24 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     // }
+    //conversion
     document.querySelector("#btn").disabled = true;
-    document.querySelector("#drop-down-2").onchange = () => {
-        document.querySelector("#btn").disabled = false;
+    var selectconvertfield = document.querySelectorAll("#convertactualincome, #convertdonationamount");
+    console.log(selectconvertfield);
+    for(let i = 0; i < selectconvertfield.length; i++){
+        selectconvertfield[i].onkeyup = () => {
+            document.querySelector("#btn").disabled = false;
+        }
+    }
+    var selectoption = document.querySelectorAll("select");
+    console.log(selectoption);
+    for(let i = 0; i < selectoption.length; i++){
+        selectoption[i].onchange = () => {
+            document.querySelector("#btn").disabled = false;
+        }
+    }
+    // document.querySelector("#drop-down-2").onchange = () => {
+        // document.querySelector("#btn").disabled = false;
         document.querySelector("#form-2").onsubmit = () => {
             const fromcurrency = document.querySelector("#drop-down-1").value;
             var url = new URL("https://api.exchangeratesapi.io/latest?base=USD");
@@ -91,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     else {
                         document.querySelector("#result").innerHTML = "Invalid Currency";
+                        document.querySelector("#result-2").innerHTML = "Invalid Currency";
                         document.querySelector("#btn").disabled = true;
                     }
                 }
@@ -98,5 +110,5 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("#btn").disabled = true;
             return false;
         }
-    };
+    // };
 });
