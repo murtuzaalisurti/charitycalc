@@ -18,22 +18,42 @@ document.addEventListener("DOMContentLoaded", function () {
                 var rate = (interest * 100) / principal;
                 console.log(typeof rate);
                 if (rate >= inflation) {
-                    var actualinc = (pminusint + ((inflation * pminusint) / 100));
-                    window.actualincround = actualinc.toFixed(2);
-                    var charity = (principal - actualinc);
-                    window.charityround = charity.toFixed(2);
+                    if (pminusint >= 5000) {
+                        var actualinc = (pminusint + ((inflation * pminusint) / 100) - ((2.5 / 100) * (pminusint)));
+                        window.actualincround = actualinc.toFixed(2);
+                        var charity = (principal - actualinc);
+                        window.charityround = charity.toFixed(2);
+                    }
+                    else {
+                        var actualinc = (pminusint + ((inflation * pminusint) / 100));
+                        window.actualincround = actualinc.toFixed(2);
+                        var charity = (principal - actualinc);
+                        window.charityround = charity.toFixed(2);
+                    }
                     result.innerHTML = `Your actual income is&nbsp<b>${window.actualincround}</b>&nbspand you have to donate&nbsp<b>${window.charityround}</b>`;
                 } else {
-                    var actualinc = pminusint;
+                    var actualinc = pminusint - ((2.5 / 100 * pminusint));
                     window.actualincround = actualinc.toFixed(2);
                     var charity = principal - actualinc;
                     window.charityround = charity.toFixed(2);
                     result.innerHTML = `Your actual income is&nbsp<b>${window.actualincround}</b>&nbspand you have to donate&nbsp<b>${window.charityround}</b>`;
                 }
             } else if (interest == 0 && principal > 0) {
+                if (principal >= 5000) {
+                    var result = document.querySelector("#output");
+                    window.withoutint = principal - ((2.5 / 100) * principal);
+                    window.woutintdonate = (2.5 / 100) * principal;
+                    result.innerHTML = `Your actual income is&nbsp<b>${window.withoutint}</b>&nbspand you have to donate&nbsp<b>${window.woutintdonate}</b>`;
+                }
+                else {
+                    var result = document.querySelector("#output");
+                    result.innerHTML = `Your actual income is&nbsp<b>${principal}</b>&nbspand you have to donate&nbsp<b>${interest}</b>`;
+                }
+            } else if (interest == 0 && principal == 0) {
                 var result = document.querySelector("#output");
                 result.innerHTML = `Your actual income is&nbsp<b>${principal}</b>&nbspand you have to donate&nbsp<b>${interest}</b>`;
-            } else if (interest == 0 && principal == 0) {
+            }
+            else if(interest > 0 && principal == 0){
                 var result = document.querySelector("#output");
                 result.innerHTML = `Your actual income is&nbsp<b>${principal}</b>&nbspand you have to donate&nbsp<b>${interest}</b>`;
             }
@@ -47,8 +67,30 @@ document.addEventListener("DOMContentLoaded", function () {
         var inflationrate = (document.querySelector("#inflationrate").value);
         calculateincome(principalamount, interestamount, inflationrate);
         document.querySelector("#actualincome").disabled = true;
-        document.querySelector("#convertactualincome").value = window.actualincround;
-        document.querySelector("#convertdonationamount").value = window.charityround;
+        if (principalamount > 0 && interestamount > 0) {
+            document.querySelector("#convertactualincome").value = window.actualincround;
+            document.querySelector("#convertdonationamount").value = window.charityround;
+        }
+        else if (interestamount == 0 && principalamount > 0) {
+            if (principalamount >= 5000) {
+                document.querySelector("#convertactualincome").value = window.withoutint;
+                document.querySelector("#convertdonationamount").value = window.woutintdonate;
+            }
+            else {
+                document.querySelector("#convertactualincome").value = principalamount;
+                document.querySelector("#convertdonationamount").value = interestamount;
+            }
+        }
+        else if (interestamount == 0 && principalamount == 0) {
+            document.querySelector("#convertactualincome").value = principalamount;
+            document.querySelector("#convertdonationamount").value = interestamount;
+        }
+        else if (interestamount > 0 && principalamount == 0) {
+            document.querySelector("#convertactualincome").value = principalamount;
+            document.querySelector("#convertdonationamount").value = interestamount;
+        }
+        // document.querySelector("#convertactualincome").value = window.actualincround;
+        // document.querySelector("#convertdonationamount").value = window.charityround;
         return false;
     }
     // });
