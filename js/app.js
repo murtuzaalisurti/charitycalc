@@ -41,9 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (interest == 0 && principal > 0) {
                 if (principal >= 5000) {
                     var result = document.querySelector("#output");
-                    window.withoutint = principal - ((2.5 / 100) * principal);
-                    window.woutintdonate = (2.5 / 100) * principal;
-                    result.innerHTML = `Your actual income is&nbsp<b>${window.withoutint}</b>&nbspand you have to donate&nbsp<b>${window.woutintdonate}</b>`;
+                    var withoutint = principal - ((2.5 / 100) * principal);
+                    window.withoutintround = withoutint.toFixed(2);
+                    var woutintdonate = (2.5 / 100) * principal;
+                    window.woutintdonateround = woutintdonate.toFixed(2);
+                    result.innerHTML = `Your actual income is&nbsp<b>${window.withoutintround}</b>&nbspand you have to donate&nbsp<b>${window.woutintdonateround}</b>`;
                 }
                 else {
                     var result = document.querySelector("#output");
@@ -73,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else if (interestamount == 0 && principalamount > 0) {
             if (principalamount >= 5000) {
-                document.querySelector("#convertactualincome").value = window.withoutint;
-                document.querySelector("#convertdonationamount").value = window.woutintdonate;
+                document.querySelector("#convertactualincome").value = window.withoutintround;
+                document.querySelector("#convertdonationamount").value = window.woutintdonateround;
             }
             else {
                 document.querySelector("#convertactualincome").value = principalamount;
